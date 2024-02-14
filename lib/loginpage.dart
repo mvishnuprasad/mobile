@@ -1,44 +1,56 @@
 import 'package:flutter/material.dart';
+import 'package:mobile/components/myButton.dart';
+
+import 'components/textfield.dart';
 
 void main() {
   runApp(
-   const  MaterialApp(home: Loginpage()),
+    MaterialApp(home: Loginpage()),
   );
 }
 
 class Loginpage extends StatelessWidget {
-  const Loginpage({super.key});
+  Loginpage({super.key});
+  final useNameController = TextEditingController();
+  final passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[3000],
-      body:  SafeArea(
+      body: SafeArea(
         child: Center(
           child: Column(
             children: [
               const SizedBox(height: 50),
-              const Icon(Icons.lock, size: 100),
+              const Icon(Icons.lock, size: 80),
               Text(
                 'Welcome back, Login to Continue',
-                 style: TextStyle(color: Colors.grey[700]),
-
+                style: TextStyle(color: Colors.grey[700]),
               ),
-              const SizedBox(height: 25 ),
-               Padding(
-                 padding: const EdgeInsets.all(25.0),
-                 child: TextField(
-                   decoration: InputDecoration(
-                     enabledBorder: const OutlineInputBorder(
-                       borderSide: BorderSide(color: Colors.grey),
-                     ),
-                         focusedBorder :  OutlineInputBorder(
-                             borderSide: BorderSide(color: Colors.grey.shade400)
-                   ),
-                               )
-                               ),
-               )
+              const SizedBox(height: 25),
+              myTextfield(
+                controller: useNameController,
+                hintText: 'User name',
+                obscureText: false,
+              ),
+              myTextfield(
+                controller: passwordController,
+                hintText: 'Password',
+                obscureText: true,
+              ),
+              const SizedBox(height: 10),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 25.0),
+                    child: Text('Forgot Password ?'),
+                  ),
+                ],
+              ),
+              myButton()
             ],
-
           ),
         ),
       ),
