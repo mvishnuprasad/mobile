@@ -33,6 +33,7 @@ class Dashboard extends StatelessWidget {
               child: ListView(
                 scrollDirection: Axis.vertical,
                 children: [
+                  //Avtar and Searchbar
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10.0),
                     child: Row(
@@ -62,6 +63,7 @@ class Dashboard extends StatelessWidget {
                   const SizedBox(
                     height: 30,
                   ),
+                  // Main title and Emoji
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10.0),
                     child: SizedBox(
@@ -89,6 +91,7 @@ class Dashboard extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
+                  // Top Artists
                   Padding(
                     padding: const EdgeInsets.only(left: 15.0),
                     child: Text(
@@ -135,6 +138,7 @@ class Dashboard extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
+                  // Discover
                   Padding(
                     padding: const EdgeInsets.only(left: 15.0),
                     child: Text(
@@ -186,8 +190,61 @@ class Dashboard extends StatelessWidget {
                       ),
                     ),
                   ),
-
-
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  // Recommended
+                  Padding(
+                    padding: const EdgeInsets.only(left: 15.0),
+                    child: Text(
+                      "Recommended For You",
+                      style: GoogleFonts.poppins(
+                          textStyle: const TextStyle(
+                              fontSize: 21, fontWeight: FontWeight.bold)),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10.0),
+                    child: SizedBox(
+                      height: 250,
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: const [
+                          recommendedCard(
+                              title: "Sweet Child O' Mine",
+                              author: "Guns and Roses",
+                              imageName: '1.jpg'),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          recommendedCard(
+                              title: "I want to know what love is",
+                              author: "Foreigner",
+                              imageName: '2.jpg'),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          recommendedCard(
+                              title: "Take My Breath away",
+                              author: "Berlin",
+                              imageName: '3.jpg'),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          recommendedCard(
+                              title: "Hungry Eyes",
+                              author: "Eric Carmen",
+                              imageName: '4.jpg'),
+                          SizedBox(
+                            width: 10,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
 
                 ],
               ),
