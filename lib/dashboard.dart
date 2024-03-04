@@ -40,7 +40,7 @@ class Dashboard extends StatelessWidget {
                       children: [
                         const CircleAvatar(
                           radius: 30,
-                          backgroundImage: AssetImage('lib/assets/avtar.jpg'),
+                          backgroundImage: AssetImage('lib/assets/avtar.png'),
                         ),
                         Container(
                           height: 60,
@@ -77,7 +77,7 @@ class Dashboard extends StatelessWidget {
                                     fontSize: 24, fontWeight: FontWeight.bold)),
                           ),
                           const Image(
-                            image: AssetImage('lib/assets/emoji.png'),
+                            image: AssetImage('lib/assets/emo.png'),
                             width: 80,
                             height: 80,
                             alignment: Alignment.topRight,
